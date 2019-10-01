@@ -47,8 +47,9 @@ function redColorScaleGenerator(values) {
   const max = Math.max.apply(Math, values);
   return x => {
     // eslint-disable-next-line no-magic-numbers
-    const nonRed = 255 - Math.round(255 * (x - min) / (max - min));
-    return {backgroundColor: `rgb(255,${nonRed},${nonRed})`};
+    const NUMBER = 255;
+    var red = NUMBER - Math.round(NUMBER * (x - min) / (max - min));
+    return { backgroundColor: `rgb(${red},${NUMBER-red},${0})` };
   };
 }
 
